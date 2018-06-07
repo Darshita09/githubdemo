@@ -1,0 +1,37 @@
+<hr>
+<div class="container">
+<h1>To Do Application</h1>
+</div>
+<hr>
+<div class="container">
+<input #txtid type="number">
+<input #txttitle type="text">
+<select #drpstatus>
+<option *ngFor="let item of status">{{item}}</option>
+</select>
+<button (click)="onadd(txtid.value,txttitle.value,drpstatus.value)">Add Task</button>
+</div>
+<div class="container">
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.status}}</td>
+    <td>
+      <button (click)"ondelete(item)" class="btn btn-success">
+        <span class="glyphicon glyphicon-trash" ></span>
+      </button>
+      |
+      <button (click)"onupdate(item)"  class="btn btn-default">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </td>
+  </tr>
+</table>
+</div>
